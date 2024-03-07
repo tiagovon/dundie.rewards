@@ -7,7 +7,7 @@ def read(*paths):
     >>> read("README.md")
     ...
     """
-    rootpath = os.path.dirname(_file_) 
+    rootpath = os.path.dirname(__file__) 
     filepath = os.path.join(rootpath, *paths)
     with open(filepath) as file_:
         return file_.read().strip()
@@ -28,7 +28,7 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "dundie = dundie._main_:main"]
+            "dundie = dundie.__main__:main"]
     },
     install_requires=read_requirements("requirements.txt"),
     extras_require={

@@ -21,4 +21,4 @@ def main():
     )
 
     arg = parser.parse_args()
-    globals()[arg.subcommad](arg.filepath
+    globals()[arg.subcommad](arg.filepath)
