@@ -1,5 +1,7 @@
 import os
 from setuptools import setup, find_packages
+
+
 def read(*paths):
     """Read the contents of a text file safely.
     >>> read("dundie", "VERSION")
@@ -25,6 +27,7 @@ setup(
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     author="Tiago Von",
+    python_requires= "*>=3.8",
     packages=find_packages(),
     entry_points={
         "console_scripts": [
