@@ -1,5 +1,4 @@
 name: CI
-
 on: 
   push:
     branches:
@@ -7,10 +6,7 @@ on:
   pull_request:
     branches:
       - "main"
-
   workflow_dispatch:
-
-
 jobs:
   tests:
     strategy:
@@ -29,8 +25,25 @@ jobs:
       - name: Run tests 
         run: make testci
       - name: publish junit results
-        uses: EnricoMi/publish-unit-test-result-action@vi
+        uses: EnricoMi/publish-unit-test-result-action@master
         if: always()
-        with: 
+        with:
           files: test-result.xml
           check_name: Test Result (Python ${{matrix.python-version}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
