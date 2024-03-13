@@ -15,7 +15,7 @@ test:
 	@.venv/bin/pytest -s 
 
 testci:
-	@.pytest -v --junitxml=test-result.xml
+	@pytest -v --junitxml=test-result.xml
 
 
 clean:            ## Clean unused files.
