@@ -11,6 +11,12 @@ virtualenv:
 ipython:
 	@.venv/bin/ipython
 
+test:
+	@.venv/bin/pytest -s 
+
+testci:
+	@.venv/bin/pytest -v --junitxml=test-result.xml
+
 
 clean:            ## Clean unused files.
 	@find ./ -name '*.pyc' -exec rm -f {} \;
@@ -27,5 +33,3 @@ clean:            ## Clean unused files.
 	@rm -rf .tox/
 	@rm -rf docs/_build
 
-test:
-	@.venv/bin/pytest -vv -s -tests
