@@ -4,7 +4,6 @@ from dundie.utills import get_logger
 
 
 log = get_logger()
-X = 1
 
 
 def load(filepath):
