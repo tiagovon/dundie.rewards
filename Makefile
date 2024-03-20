@@ -11,6 +11,14 @@ virtualenv:
 ipython:
 	@.venv/bin/ipython
 
+lint:
+	@.venv/bin/pflake8 dundie tests integration
+
+fmt:
+	@.venv/bin/isort dundie tests integration
+	@.venv/bin/black dundie tests integration
+
+
 test:
 	@.venv/bin/pytest -s 
 
