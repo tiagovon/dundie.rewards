@@ -1,5 +1,5 @@
-flake8
 pytest
+flake8
 pyproject-flake8
 black
 isort
