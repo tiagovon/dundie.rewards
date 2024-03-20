@@ -11,4 +11,4 @@ black
 isort
 
 # Install project as editable
--e .
+-e .s
