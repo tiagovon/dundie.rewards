@@ -8,7 +8,6 @@ cmd = CliRunner()
 
 
 @pytest.mark.integration
-@pytest.mark.medium
 def test_load_positive_call_load_command():
     """test command load"""
     out = cmd.invoke(load, PEOPLE_FILE)
@@ -16,7 +15,6 @@ def test_load_positive_call_load_command():
 
 
 @pytest.mark.integration
-@pytest.mark.medium
 @pytest.mark.parametrize("wrong_command", ["loady", "carrega", "start"])
 def test_load_negative_call_load_command_with_wrong_params(wrong_command):
     """test command load"""

@@ -1,3 +1,5 @@
+.PHONY: install virtualenv ipython clean test pflake8
+
 
 install:
 	@echo "Installing for dev environment"
@@ -11,27 +13,25 @@ virtualenv:
 ipython:
 	@.venv/bin/ipython
 
-lint:
-	@.venv/bin/pflake8 dundie tests integration
 
-lint_make:
-	@flake8 dundie tests integration
+lint:
+	@.venv/bin/pflake8
 
 fmt:
 	@.venv/bin/isort dundie tests integration
 	@.venv/bin/black dundie tests integration
 
-
 test:
-	@.venv/bin/pytest -s 
+	@.venv/bin/pytest -s
 
-testci:
-	@pytest -v --junitxml=test-result.xml
+watch:
+	# @.venv/bin/ptw
+	@ls **/*.py | entr pytest
 
 
 clean:            ## Clean unused files.
 	@find ./ -name '*.pyc' -exec rm -f {} \;
-	@find ./ -name '_pycache_' -exec rm -rf {} \;
+	@find ./ -name '__pycache__' -exec rm -rf {} \;
 	@find ./ -name 'Thumbs.db' -exec rm -f {} \;
 	@find ./ -name '*~' -exec rm -f {} \;
 	@rm -rf .cache
@@ -43,4 +43,3 @@ clean:            ## Clean unused files.
 	@rm -rf htmlcov
 	@rm -rf .tox/
 	@rm -rf docs/_build
-
