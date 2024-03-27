@@ -15,10 +15,10 @@ ipython:
 
 
 lint:
-	@.venv/bin/pflake8
+	@.venv/bin/pflake8 
 
 fmt:
-	@.venv/bin/isort dundie tests integration
+	@.venv/bin/isort dundie tests integration conftest
 	@.venv/bin/black dundie tests integration
 
 test:
