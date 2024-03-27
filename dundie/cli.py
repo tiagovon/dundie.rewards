@@ -1,8 +1,10 @@
+import json
+
 import pkg_resources
 import rich_click as click
 from rich.console import Console
 from rich.table import Table
-import json
+
 from dundie import core
 
 click.rich_click.USE_RICH_MARKUP = True
@@ -41,6 +43,8 @@ def load(filepath):
 
     console = Console()
     console.print(table)
+
+
 @main.command()
 @click.option("--dept", required=False)
 @click.option("--email", required=False)
@@ -64,6 +68,7 @@ def show(output, **query):
 
     console = Console()
     console.print(table)
+
 
 @main.command()
 @click.argument("value", type=click.INT, required=True)

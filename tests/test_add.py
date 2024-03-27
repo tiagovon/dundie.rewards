@@ -2,7 +2,6 @@ import pytest
 
 from dundie.core import add, load, read
 from dundie.database import add_person, commit, connect
-
 from tests.constants import PEOPLE_FILE
 
 
