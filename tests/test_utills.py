@@ -1,7 +1,7 @@
 import pytest
 
-from dundie.email import check_valid_email
-from dundie.user import generate_simple_password
+from tiagovondundie.email import check_valid_email
+from tiagovondundie.user import generate_simple_password
 
 
 @pytest.mark.unit

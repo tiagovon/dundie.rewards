@@ -5,7 +5,7 @@ import rich_click as click
 from rich.console import Console
 from rich.table import Table
 
-from dundie import core
+from tiagovondundie import core
 
 click.rich_click.USE_RICH_MARKUP = True
 click.rich_click.USE_MARKDOWN = True
@@ -16,7 +16,7 @@ click.rich_click.APPEND_METAVARS_HELP = True
 
 
 @click.group()
-@click.version_option(pkg_resources.get_distribution("dundie").version)
+@click.version_option(pkg_resources.get_distribution("tiagovon-dundie").version)
 def main():
     """Dunder Mifflin Rewards System.
     This cli application controls DM rewards.

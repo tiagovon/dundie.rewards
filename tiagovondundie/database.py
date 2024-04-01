@@ -1,9 +1,9 @@
 import json
 from datetime import datetime
 
-from dundie.email import check_valid_email, send_email
-from dundie.settings import DATABASE_PATH, EMAIL_FROM
-from dundie.user import generate_simple_password
+from tiagovondundie.email import check_valid_email, send_email
+from tiagovondundie.settings import DATABASE_PATH, EMAIL_FROM
+from tiagovondundie.user import generate_simple_password
 
 EMPTY_DB = {"people": {}, "balance": {}, "movement": {}, "users": {}}
 
@@ -63,6 +63,7 @@ def set_initial_balance(db, pk, person):
 
 
 def add_movement(db, pk, value, actor="system"):
+    """add one value a data base"""
     movements = db["movement"].setdefault(pk, [])
     movements.append(
         {"date": datetime.now().isoformat(), "actor": actor, "value": value}

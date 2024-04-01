@@ -2,8 +2,8 @@ import re
 import smtplib
 from email.mime.text import MIMEText
 
-from dundie.settings import SMTP_HOST, SMTP_PORT, SMTP_TIMEOUT
-from dundie.utills import get_logger
+from tiagovondundie.settings import SMTP_HOST, SMTP_PORT, SMTP_TIMEOUT
+from tiagovondundie.utills import get_logger
 
 log = get_logger()
 
